@@ -25,17 +25,14 @@ var app = new Vue({
       //最新戰帖輪播
       const $newsbox = $('.newsbox')
       const $allnews = $('.allnews')
-      function newsHandler(){
-        $newsbox.animate({height:$allnews.children('.content').eq(1).height()},500,function(){
-          $allnews.animate({top:$allnews.children('.content').eq(0).outerHeight()*-1},500,()=>{
-            $allnews.children('.content').eq(0).appendTo($allnews)
-            $allnews.css({top:0})
-          })
+      $newsbox.css({height:$allnews.children('.content').eq(1).outerHeight()})
+      function Handler(){
+        $allnews.animate({top:$allnews.children('.content').eq(0).outerHeight()*-1},500,()=>{
+          $allnews.children('.content').eq(0).appendTo($allnews)
+          $allnews.css({top:0})
         })
-        
       }
-
-      setInterval(newsHandler,5000)
+      setInterval(Handler,5000)
     }
   },
   created() {

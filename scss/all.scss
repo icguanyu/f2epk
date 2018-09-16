@@ -188,7 +188,7 @@ li {
     height: 100px;
     overflow: hidden;
     position: relative;
-    transition: all .3s;
+    transition: all 0.3s;
     .allnews {
       width: 100%;
       top: 0px;
@@ -205,7 +205,7 @@ li {
         justify-content: center;
         align-items: center;
         letter-spacing: 1px;
-        .challenger{
+        .challenger {
           font-size: 18px;
           font-weight: 400;
         }
@@ -230,8 +230,21 @@ li {
   }
 }
 @media screen and (max-width: 640px) {
-  .info{
+  .all {
+    .contain {
+      padding: 15px;
+      .header{
+        h1{
+          font-size: 24px;
+        }
+      }
+      .total {
+        font-size: 18px;
+      }
+    }
+  }
+  .info {
     flex-direction: row;
-    flex-wrap: wrap
+    flex-wrap: wrap;
   }
 }
