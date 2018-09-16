@@ -3,9 +3,7 @@ var app = new Vue({
   data: {
     data: [],
     last: {},
-    filter_kinds: '',
-    current_page: '',
-    per_page:20,
+    filter_kinds: ''
   },
   methods: {
     getData() {
@@ -98,12 +96,6 @@ const length = $block.length;
 const move = $block.outerWidth();
 const containWidth = $block.length * $block.outerWidth() * 2; //兩倍數量的寬(因複製)
 let counts = 3; //視窗顯示數量
-const star = $(".block")
-  .slice(-1)
-  .clone(); //前面補上尾巴1個
-const end = $(".block")
-  .slice(0, length - 1)
-  .clone(); //後面補上剩下的
 
 function handler() {
   if ($(this).is(".next")) {
@@ -145,12 +137,6 @@ $(window).resize(function() {
 
 $(".prev,.next").click(handler);
 $slidebox.css({ width: containWidth, left: move * -1 });
-
-
-const $newsbox = $('.newsbox')
-const $content = $('.content')
-$newsbox.css({height:$content.eq(0).outerHeight()})
-
 
 //回頂端
 const $backTOp = $('.backTop')
