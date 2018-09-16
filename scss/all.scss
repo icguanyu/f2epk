@@ -1,16 +1,5 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
-@mixin scrollbars($size, $foreground-color, $background-color) {
-  ::-webkit-scrollbar {
-    width: $size;
-    height: $size;
-    background: $background-color;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: $foreground-color;
-    cursor: pointer;
-  }
-}
-@include scrollbars(6px, #1f6a80, transparent);
+
 body,
 html {
   margin: 0;

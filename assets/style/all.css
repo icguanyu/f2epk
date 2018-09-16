@@ -1,16 +1,5 @@
 @charset "UTF-8";
 @import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #1f6a80;
-  cursor: pointer;
-}
-
 body,
 html {
   margin: 0;
