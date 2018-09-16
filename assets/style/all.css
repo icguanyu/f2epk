@@ -1,0 +1,310 @@
+@charset "UTF-8";
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f6a80;
+  cursor: pointer;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Noto Sans TC", sans-serif;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.all {
+  background: #fff;
+  width: 100%;
+  max-width: 1200px;
+  height: 2000px;
+}
+
+.all img {
+  width: 100%;
+}
+
+.all .contain {
+  width: 100%;
+  padding: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+}
+
+.all .contain .header {
+  width: 100%;
+  padding-bottom: 10px;
+  margin: 0 auto;
+}
+
+.all .contain .header h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.all .contain .header p {
+  text-align: center;
+}
+
+.all .contain .total {
+  margin: 30px 0;
+  font-weight: 600;
+  font-size: 26px;
+  text-align: center;
+  font-style: italic;
+  letter-spacing: 3px;
+  background: -webkit-linear-gradient(right, #30cfd0 30%, #330867 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.competitor {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.competitor .slide {
+  width: 600px;
+  height: 300px;
+  margin: 30px auto 0px auto;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.competitor .slidebox {
+  position: absolute;
+  left: 0;
+  height: 300px;
+  font-size: 0px;
+  overflow: hidden;
+}
+
+.competitor .slidebox .block {
+  cursor: pointer;
+  vertical-align: top;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+  color: #fff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.competitor .slidebox .block .level {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-size: initial;
+  display: inline-block;
+  width: 280px;
+  height: 280px;
+  margin: 0 10px;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 50%;
+}
+
+.competitor .slidebox .block .level hr {
+  height: 1px;
+  background: #fff;
+  border: none;
+}
+
+.competitor .slidebox .block .level span {
+  font-style: italic;
+}
+
+.competitor .slidebox .block .level .count {
+  font-weight: 600;
+  font-size: 64px;
+  position: relative;
+}
+
+.competitor .slidebox .block .level .count::after {
+  content: "人發起戰帖";
+  font-size: 16px;
+}
+
+.competitor .btn {
+  position: absolute;
+  width: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.competitor .btn div {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  background: #333;
+  border-radius: 50%;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+}
+
+.competitor .btn .next {
+  margin-right: -40px;
+}
+
+.competitor .btn .prev {
+  margin-left: -40px;
+}
+
+.competitor #a {
+  background: #05668d;
+}
+
+.competitor #b {
+  background: #028090;
+}
+
+.competitor #c {
+  background: #00a896;
+}
+
+.competitor #d {
+  background: #02c39a;
+}
+
+.competitor #e {
+  background: #a6a6a9;
+}
+
+.wall {
+  margin: 20px 0;
+}
+
+.wall .title {
+  font-style: italic;
+  text-align: center;
+  letter-spacing: 3px;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.wall .newsbox {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.wall .newsbox .allnews {
+  width: 100%;
+  top: 0px;
+  position: absolute;
+}
+
+.wall .newsbox .content {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.wall .newsbox .content .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: 1px;
+}
+
+.wall .newsbox .content .info .challenger {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.wall .newsbox .content .info .target {
+  font-weight: 600;
+}
+
+.wall .newsbox .content .info .time {
+  font-size: 14px;
+  color: #888;
+  letter-spacing: 0;
+  font-style: italic;
+}
+
+.wall .newsbox .content .text {
+  letter-spacing: 2px;
+  color: #888;
+  padding: 10px;
+  font-size: 22px;
+  font-style: italic;
+}
+
+@media screen and (max-width: 640px) {
+  .info {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}

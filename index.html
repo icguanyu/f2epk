@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>六角學院【挑戰活動】網頁切版 PK 戰</title>
+  <link rel="stylesheet" href="assets/style/all.css">
+</head>
+
+<body>
+
+  <div class="all" id="app"><a href="https://www.hexschool.com/2018/09/13/2018-09-13-hexschool-challenge/" target="_blank"><img
+        src="https://firebasestorage.googleapis.com/v0/b/hexschool-api.appspot.com/o/blog%2F2018%2F09%2Fpk-character_og-image.png?alt=media&amp;token=bf3fb8f8-f52c-4053-bfe0-39c7018dbee6"
+        alt="" /></a>
+    <div class="contain">
+      <div class="header">
+        <h1>六角學院【挑戰活動】網頁切版 PK 戰</h1>
+        <p>網頁切版，是身為網頁設計師、前端工程師第一步會學到的基本功，<br>但學到一身切版功夫，卻苦無找不到對手，豈不就太過孤獨？<br>這次六角學院將派出五位精銳，向各位切磋切磋！ (拱手行禮</p>
+        <p class="total">- 目前共計{{data.length}}人參與挑戰！ -</p>
+        <div class="competitor">
+          <div class="slide">
+            <div class="slidebox">
+              <div class="block">
+                <div class="level" id="a">
+                  <h2>實習生</h2><span>神秘實習生</span>
+                  <p>「我要切 10版 ！」</p>
+                  <hr />
+                  <p>目前挑戰人數</p>
+                  <p class="count">{{levelone.length}}</p>
+                </div>
+              </div>
+              <div class="block">
+                <div class="level" id="b">
+                  <h2>葉子</h2><span>初級前端工程師</span>
+                  <p>「選我！選我！ (意義不明」</p>
+                  <hr />
+                  <p>目前挑戰人數</p>
+                  <p class="count">{{leveltwo.length}}</p>
+                </div>
+              </div>
+              <div class="block">
+                <div class="level" id="c">
+                  <h2>俊儀</h2><span>設計師</span>
+                  <p>「前端？略懂略懂~」</p>
+                  <hr />
+                  <p>目前挑戰人數</p>
+                  <p class="count">{{levelthree.length}}</p>
+                </div>
+              </div>
+              <div class="block">
+                <div class="level" id="d">
+                  <h2>志誠</h2><span>資深前端工程師</span>
+                  <p>「我要打 10 個！」</p>
+                  <hr />
+                  <p>目前挑戰人數</p>
+                  <p class="count">{{levelfour.length}}</p>
+                </div>
+              </div>
+              <div class="block">
+                <div class="level" id="e">
+                  <h2>洧杰</h2><span>資深前端工程師</span>
+                  <p>「從身體深處感到熱血沸騰！」</p>
+                  <hr />
+                  <p>目前挑戰人數</p>
+                  <p class="count">{{levelfive.length}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="btn">
+            <div class="prev">＜</div>
+            <div class="next">＞</div>
+          </div>
+        </div>
+      </div>
+      <div class="wall">
+        <p class="title">- 最新戰帖 - </p>
+        <div class="newsbox">
+          <div class="allnews">
+            <div class="content" v-for="item in last">
+              <p class="info"><span class="challenger">{{item['gsx$您的暱稱']['$t']}}</span> 對：<span class="target">{{item['gsx$您想挑戰誰']['$t']}}</span>發起挑戰！<span
+                  class="time"> - {{item['gsx$時間戳記']['$t']}}</span></p>
+              <p class="text">
+                "{{item['gsx$留言你想挑戰示威的話語例六角設計師來吧跟我一決高下']['$t']}}<span v-if="!item['gsx$留言你想挑戰示威的話語例六角設計師來吧跟我一決高下']['$t']">(未留言)</span>"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btn">
+
+      </div>
+    </div>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js'></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/all.js"></script>
+</body>
+
+</html>
