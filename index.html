@@ -10,15 +10,16 @@
 </head>
 
 <body>
-
-  <div class="all" id="app"><a href="https://www.hexschool.com/2018/09/13/2018-09-13-hexschool-challenge/" target="_blank"><img
-        src="https://firebasestorage.googleapis.com/v0/b/hexschool-api.appspot.com/o/blog%2F2018%2F09%2Fpk-character_og-image.png?alt=media&amp;token=bf3fb8f8-f52c-4053-bfe0-39c7018dbee6"
-        alt="" /></a>
+  <div class="all" id="app">
+    <a href="https://www.hexschool.com/2018/09/13/2018-09-13-hexschool-challenge/" target="_blank">
+      <img src="https://firebasestorage.googleapis.com/v0/b/hexschool-api.appspot.com/o/blog%2F2018%2F09%2Fpk-character_og-image.png?alt=media&amp;token=bf3fb8f8-f52c-4053-bfe0-39c7018dbee6"
+        alt="" />
+    </a>
     <div class="contain">
       <div class="header">
         <h1>六角學院【挑戰活動】網頁切版 PK 戰</h1>
         <p>網頁切版，是身為網頁設計師、前端工程師第一步會學到的基本功，但學到一身切版功夫，卻苦無找不到對手，豈不就太過孤獨？這次六角學院將派出五位精銳，向各位切磋切磋！ (拱手行禮</p>
-        <p class="total">- 目前共計{{data.length}}人參與挑戰！ -</p>
+        <p class="total linear">- 目前共計{{data.length}}人參與挑戰！ -</p>
         <div class="competitor">
           <div class="slide">
             <div class="slidebox">
@@ -51,7 +52,7 @@
               </div>
               <div class="block">
                 <div class="level" id="d">
-                  <h2>志誠</h2><span>資深前端工程師</span>
+                  <h2>志誠</h2><span>資深前端設計師</span>
                   <p>「我要打 10 個！」</p>
                   <hr />
                   <p>目前挑戰人數</p>
@@ -76,23 +77,54 @@
         </div>
       </div>
       <div class="wall">
-        <p class="title">- 最新戰帖 - </p>
+        <p class="title linear">- 最新戰帖 - </p>
         <div class="newsbox">
           <div class="allnews">
             <div class="content" v-for="item in last">
               <p class="info"><span class="challenger">{{item['gsx$您的暱稱']['$t']}}</span> 對：<span class="target">{{item['gsx$您想挑戰誰']['$t']}}</span>發起挑戰！<span
                   class="time"> - {{item['gsx$時間戳記']['$t']}}</span></p>
               <p class="text">
-                "{{item['gsx$留言你想挑戰示威的話語例六角設計師來吧跟我一決高下']['$t']}}<span v-if="!item['gsx$留言你想挑戰示威的話語例六角設計師來吧跟我一決高下']['$t']">(未留言)</span>"</p>
+                "{{item['gsx$留言你想挑戰示威的話語例六角設計師來吧跟我一決高下']['$t']}}<span v-if="!item['gsx$留言你想挑戰示威的話語例六角設計師來吧跟我一決高下']['$t']">未留言</span>"</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="btn">
+      <div class="other">
+        <p class="title linear">- 所有戰帖 - </p>
+        <div class="for_kinds">
+          <label for="search_kinds"></label>
+          <select name="search_kinds" id="search_kinds" v-model='filter_kinds'>
+            <option value="">全部</option>
+            <option value="實習">神秘實習生 - ？？</option>
+            <option value="葉子">初級前端工程師 - 葉子</option>
+            <option value="俊儀">設計師 - 俊儀</option>
+            <option value="志誠">前端設計師 - 王志誠</option>
+            <option value="洧杰">前端工程師 - 廖洧杰</option>
+          </select>
+        </div>
+        <a href="https://www.hexschool.com/2018/09/13/2018-09-13-hexschool-challenge/" class="join">加入戰局</a>
+        <div class="allchallnger">
 
+          <div class="container">
+            <div class="item" v-for="(item,key) in filterPeople">
+              <!-- <div class="number">{{key+1}}.</div> -->
+              <div class="who">{{item['gsx$您的暱稱']['$t']}}</div>
+              <div class="content">{{item['gsx$留言你想挑戰示威的話語例六角設計師來吧跟我一決高下']['$t']}}<span v-if="!item['gsx$留言你想挑戰示威的話語例六角設計師來吧跟我一決高下']['$t']">..............</div>
+              <div class="time">{{item['gsx$時間戳記']['$t']}}</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="backTop">Top</div>
+    <div class="info">
+      <p>作者：icguanyu | 
+        <a href="https://github.com/icguanyu" target="_blank">Github</a>｜
+        <a href="https://codepen.io/icguanyu/" target="_blank">Codepen</a>
+      </p>
+    </div>
   </div>
+
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js'></script>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

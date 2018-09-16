@@ -2,7 +2,10 @@ var app = new Vue({
   el: "#app",
   data: {
     data: [],
-    last: {}
+    last: {},
+    filter_kinds: '',
+    current_page: '',
+    per_page:20,
   },
   methods: {
     getData() {
@@ -25,8 +28,8 @@ var app = new Vue({
       //最新戰帖輪播
       const $newsbox = $('.newsbox')
       const $allnews = $('.allnews')
-      $newsbox.css({height:$allnews.children('.content').eq(1).outerHeight()})
       function Handler(){
+        $newsbox.css({height:$allnews.children('.content').eq(1).outerHeight()})
         $allnews.animate({top:$allnews.children('.content').eq(0).outerHeight()*-1},500,()=>{
           $allnews.children('.content').eq(0).appendTo($allnews)
           $allnews.css({top:0})
@@ -68,6 +71,21 @@ var app = new Vue({
       return vm.data.filter(item => {
         return item["gsx$您想挑戰誰"]["$t"] === "洧杰 - 資深前端工程師";
       });
+    },
+    filterPeople(){
+      const vm = this
+      //vm.current_page = 1 //要過濾前返回第一頁
+      //$('.page span').eq(0).addClass('current').siblings().removeClass()//要過濾前返回第一頁
+      //四個條件:種類/星期/時段/特殊
+      const kindReg = new RegExp(
+        this.filter_kinds ? `[${this.filter_kinds}@]` : `.*`,'gi'
+      )
+      //過濾
+      const result = vm.data.filter((item)=>{
+        return item['gsx$您想挑戰誰']['$t'].match(kindReg)
+        
+      })
+      return result.reverse()
     }
   }
 });
@@ -110,8 +128,7 @@ function reset() {
   $btn.css({ width: move * counts });
 }
 let timer; //節流
-$(window)
-  .resize(function() {
+$(window).resize(function() {
     let w = $(this).width();
     // if(timer) clearTimeout(timer)
     // timer = setTimeout(function(){
@@ -124,10 +141,18 @@ $(window)
     }
     reset();
     // },500)
-  })
-  .resize();
+}).resize();
 
 $(".prev,.next").click(handler);
 $slidebox.css({ width: containWidth, left: move * -1 });
 
+//回頂端
+const $backTOp = $('.backTop')
+$backTOp.click(function(){
+  $("html,body").animate({scrollTop:0},600)
+})
+$(window).scroll(function(){
+  var scrollY = $(this).scrollTop()
+  scrollY>300?$backTOp.fadeIn():$backTOp.fadeOut()
+})
 

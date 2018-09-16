@@ -49,6 +49,12 @@ li {
           user-select: none;
 }
 
+.linear {
+  background: -webkit-linear-gradient(right, #30cfd0 30%, #330867 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .all {
   background: #fff;
   width: 100%;
@@ -90,9 +96,16 @@ li {
   text-align: center;
   font-style: italic;
   letter-spacing: 3px;
-  background: -webkit-linear-gradient(right, #30cfd0 30%, #330867 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+}
+
+.title {
+  font-weight: 600;
+  font-style: italic;
+  text-align: center;
+  letter-spacing: 3px;
+  font-size: 26px;
+  margin-bottom: 10px;
+  display: inline-block;
 }
 
 .competitor {
@@ -227,19 +240,15 @@ li {
 
 .wall {
   margin: 20px 0;
-}
-
-.wall .title {
-  font-style: italic;
+  border-bottom: 1px solid #00a896;
   text-align: center;
-  letter-spacing: 3px;
-  font-size: 26px;
-  margin-bottom: 10px;
 }
 
 .wall .newsbox {
   width: 100%;
-  height: 100px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   overflow: hidden;
   position: relative;
   -webkit-transition: all 0.3s;
@@ -275,11 +284,14 @@ li {
 }
 
 .wall .newsbox .content .info .challenger {
+  font-weight: 600;
+  color: #028090;
   font-size: 18px;
-  font-weight: 400;
+  margin-right: 10px;
 }
 
 .wall .newsbox .content .info .target {
+  color: #05668d;
   font-weight: 600;
 }
 
@@ -298,12 +310,214 @@ li {
   font-style: italic;
 }
 
+.other {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.other .allchallnger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #ddeaf6;
+  padding: 20px;
+  border-radius: 3px;
+}
+
+.other .for_kinds {
+  width: 280px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.other .for_kinds select {
+  font-size: 18px;
+  outline: none;
+  width: 260px;
+  height: 40px;
+  position: relative;
+  border: 0.5px solid #00a896;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 0px 10px;
+  border-radius: 3px;
+}
+
+.other .for_kinds label {
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  border: none;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #00a896;
+  right: 0;
+  pointer-events: none;
+  border-radius: 3px;
+  z-index: 1;
+}
+
+.other .for_kinds label:before {
+  display: block;
+  border: 20px solid #eff3f6;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  content: "";
+  -webkit-transform: scale(0.4, 0.6);
+          transform: scale(0.4, 0.6);
+  top: 6px;
+  position: absolute;
+}
+
+.other .for_kinds option {
+  font-size: 20px;
+}
+
+.other .item {
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 10px;
+  margin-left: 30px;
+}
+
+.other .item .number {
+  border-radius: 10px 0px 0px 10px;
+  background: #00a896;
+  padding: 10px;
+  min-width: 20px;
+  color: #fff;
+}
+
+.other .item .who {
+  font-size: 12px;
+  min-width: 100px;
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.other .item .who::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url("../../assets/profile2.png");
+  background-size: cover;
+  top: 0;
+  left: -35px;
+}
+
+.other .item .content {
+  font-size: 18px;
+  max-width: 60%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.other .item .content span {
+  font-size: 12px;
+}
+
+.other .item .time {
+  font-size: 12px;
+  display: contents;
+  color: #666;
+}
+
+.other .join {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+  text-align: center;
+  background: #00a896;
+  padding: 5px 30px;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 5px;
+  margin: 15px;
+}
+
+select, option {
+  font-family: "Noto Sans TC";
+}
+
+.backTop {
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  z-index: 1;
+  right: 10px;
+  bottom: 10px;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 65px;
+  text-align: center;
+  border-radius: 2px;
+  background: #888;
+}
+
+.backTop::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 17px;
+  width: 15px;
+  height: 15px;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  z-index: 1;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.info {
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 14px;
+  padding: 8px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 @media screen and (max-width: 640px) {
   .all .contain {
     padding: 15px;
   }
   .all .contain .header h1 {
-    font-size: 24px;
+    font-size: 20px;
   }
   .all .contain .total {
     font-size: 18px;
