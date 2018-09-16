@@ -241,14 +241,13 @@ li {
 .wall {
   margin: 20px 0;
   border-bottom: 1px solid #00a896;
+  padding-bottom: 20px;
   text-align: center;
 }
 
 .wall .newsbox {
   width: 100%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 200px;
   overflow: hidden;
   position: relative;
   -webkit-transition: all 0.3s;
