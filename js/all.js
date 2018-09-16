@@ -146,6 +146,12 @@ $(window).resize(function() {
 $(".prev,.next").click(handler);
 $slidebox.css({ width: containWidth, left: move * -1 });
 
+
+const $newsbox = $('.newsbox')
+const $content = $('.content')
+$newsbox.css({height:$content.eq(0).outerHeight()})
+
+
 //回頂端
 const $backTOp = $('.backTop')
 $backTOp.click(function(){

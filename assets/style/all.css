@@ -247,7 +247,7 @@ li {
 
 .wall .newsbox {
   width: 100%;
-  height: 200px;
+  height: 130px;
   overflow: hidden;
   position: relative;
   -webkit-transition: all 0.3s;
@@ -324,6 +324,7 @@ li {
 }
 
 .other .allchallnger {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
